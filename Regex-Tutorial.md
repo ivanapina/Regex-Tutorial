@@ -130,5 +130,7 @@ If in a string, we are looking for for specific words. Boundaries are not used i
 ## Author
 
 This tutorial was created by Ivana Pina
+
 [GitHub](https://github.com/ivanapina/)
+
 [Email](ivanapina@gmail.com)
