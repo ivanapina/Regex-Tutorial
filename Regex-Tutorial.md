@@ -62,21 +62,73 @@ It is not present in the code for the given matching email code, but in order to
 ```sh
 /^#?([a-f0-9]{6}|[a-f0-9]{3})$/
 ```
+This is a regex for matching a hex code that uses the OR Operator. What this will do is it will match where it starts with the # and that has to come first followed by one of the following:
+
+```sh
+[a-f0-9]{6}
+```
+which will match a 6 character long string that contains a combination of a-f letters and 0-9 numbers.
+
+`|` OR Operator
+
+```sh
+[a-f0-9]{3}
+```
+it will match a 3 character long string that contains a combination of a-f letters and 0-9 numbers.
 
 ### Character Classes
 
+`\d` is present in the given matching email code and what it will match a single letter character, a-z, after the `@` sign in the email address. Basically ensuring that a letter is matched after the `@` in the email and not a number or special character.
+
 ### Flags
+
+A regex flag is not used in the matching email code that is being used for this tutorial. A regular expression typically comes in the form:
+
+```sh
+/regex/
+```
+Where the slashes denote where the regular expresssion starts and ends. A flag can be used after the slash to give more guidelines for our matching. The flags are:
+
+g which stands for "global" which will allow for matching all the instances within a string that follow the matching guidelines set in the regular expression.
+m which stands for "multiline" which will search line by line rather than searching through a string as a whole.
+i which stands for "insensitive" will make the regular expression case-insensitive, so capitals and lower-case letters will not deture the matching.
 
 ### Grouping and Capturing
 
+Contininuing with the code for matching an email:
+
+```sh
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+We can talk about grouping and capturing.
+
+`([a-z0-9_\.-]+)` is the first group that appears in our regex. This must be true before moving on to "match" the next part of the code. `([\da-z\.-]+)` is the second group that appears in our regex. `([a-z\.]{2,6})` is the third group that appears in our regex.
+
+When matching, we have to make sure we are following the guidelines of the group before moving on to the next group.
+
 ### Bracket Expressions
 
-### Greedy and Lazy Match
+Contininuing with the code for matching an email:
+
+```sh
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+```
+
+We can talk about grouping and capturing.
+
+```sh
+[a-z0-9_\.-]
+```
+The guidelines for matching the group. For this code snippet, it can contain letters a-z, numbers 0-9, an underscore, hyphen, or period.
+
+The period is an escaped character, so it required the backslash in order to be able to be matched.
 
 ### Boundaries
 
-### Back-references
-
-### Look-ahead and Look-behind
+If in a string, we are looking for for specific words. Boundaries are not used in the given matching an email code.
 
 ## Author
+
+This tutorial was created by Ivana Pina
+[GitHub](https://github.com/ivanapina/)
+[Email](ivanapina@gmail.com)
